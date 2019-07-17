@@ -1,5 +1,4 @@
 <?php
-//路由控制
 use think\Route;
 
 //Banner
