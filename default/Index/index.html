@@ -1,0 +1,17 @@
+<include file="Public/header"/>
+<?php $lang_type = session('web_lang') ;if($lang_type == 2){
+?>
+{:W('Category/banner',array('englishbanner'))}
+<?php	
+}else{ ?>
+{:W('Category/banner',array('pcbanner'))}
+<?php
+}	
+?>
+<script>
+	$(function(){
+		$('body').css('overflow-y','hidden');
+	})
+</script>
+</body>
+</html>

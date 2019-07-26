@@ -12,7 +12,7 @@ namespace app\api\model;
 class Order extends BaseModel
 {
 
-    protected $hidden = ['user_id','create_time','update_time'];
+    protected $hidden = ['user_id','update_time'];
     protected $autoWriteTimestamp=true;
 
     //分页

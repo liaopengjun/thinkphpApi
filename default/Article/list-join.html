@@ -1,0 +1,48 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	<img src="__IMG__/join-head-bg.jpg" class="pic">
+</div> 
+<!-- 招商加盟 -->
+<div class="join-wrap">
+	<div class="terms-joining">
+		<think:article id="323">
+			<div class="title-box">
+				<div class="tit">{$article[title]}</div>
+				<div class="eg">{$article[eg]}</div>
+			</div>
+			<div class="content">{$article.content}</div>
+		</think:article>
+	</div>
+	<div class="franchise-process">
+		<think:article id="324">
+			<div class="title-box">
+				<div class="tit">{$article.title}</div>
+				<div class="eg">{$article[eg]}</div>
+			</div>
+			<div class="pic-box">
+				<img class="pic-x" src="{$article.cover_id|get_cover='path'}"/>
+			</div>
+		</think:article>
+	</div> 
+	<div class="to-support">
+		<think:article id="325">
+			<div class="title-box">
+				<div class="tit">{$article[title]}</div>
+				<div class="eg">{$article[eg]}</div>
+			</div>
+			<div class="content">{$article.content}</div>
+		</think:article>  
+	</div>
+</div>
+<include file="Public/footer" />   
+ 
+<script> 
+	$(function(){
+		messPage.initPage();
+		$('body').css('background','#f5f5f5');
+	})
+</script>
+</body>
+ 
+</html>

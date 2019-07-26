@@ -1,0 +1,103 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	<img src="__IMG__/about-head-bg.jpg" class="pic">
+</div> 
+<!-- 关于我们 -->
+<div class="module-pages-wrap">
+	<!--公司介绍-->
+	 <div class="company-introduction clr">
+	 	<think:article id="130">
+	 	<div class="pic-box fl">
+	 		<img class="pic-x" src="{$article.cover_id|get_cover='path'}" alt="{$cate.title}" />
+	 	</div> 
+	 	<div class="words fr">
+	 		<div class="module-pages-title">
+	 			<div class="title">{$article.title}</div>
+	 			<div class="eg">{$article.eg}</div>
+	 		</div>
+	 		<div class="text">{$article.content}</div>
+	 	</div> 
+	 	</think:article>  
+	 </div>
+	 <!--企业文化-->
+	 <div class="corporate-culture">
+	 	<div class="module-pages-title" style="text-align: center;">
+ 			<div class="title">企业文化</div>
+ 			<div class="eg">company culture</div>
+ 		</div>
+ 		<ul class="main clr">
+ 			<article:list name="vo" category="97" row="3">
+ 			<li class="lis">
+ 				<div class="pic-box">
+ 					<img class="pic" src="{$vo.cover_id|get_cover='path'}" alt="{$vo.title}" />
+ 				</div>
+ 				<div class="words">
+ 					<div class="title">{$vo.title}</div>
+ 					<div class="desc">{$vo.description}</div>
+ 				</div> 
+ 			</li>
+ 			</article:list>
+ 		</ul>
+	 </div>
+</div>
+<!--发展历程-->
+<div class="development-history">
+ 	<div class="wrap clr">
+ 		<div class="main fl">
+			<div class="module-pages-title">
+	 			<div class="title" style="color: #fff;">发展历程</div>
+	 			<div class="eg" style="color: #fff;opacity: 0.3;">development path</div>
+	 		</div> 
+	 		<div class="scroll-show">
+	 			<ul class="list">
+	 			<article:list name="vo" category="98" row="99">
+		 			<li class="lis clr">
+		 				<span class="title txt">{$vo.title}</span>
+		 				<a class="desc txt a_hidden" title="{$vo.description}">{$vo.description}</a>
+		 			</li> 
+	 			</article:list>
+		 		</ul>
+	 		</div>
+	 	</div> 
+	 	<div class="photo-item fr">
+	 		<think:cate pid="95">
+	 		<img class="pic" src="{$cate['icon']|get_cover='path'}" />
+	 		</think:cate>  
+	 	</div>
+ 	</div> 
+</div>
+<!--荣誉资质-->
+<div class="honor">
+	<div class="module-pages-title" style="text-align: center;">
+		<div class="title">企业资质</div>
+		<div class="eg">Honor</div>
+	</div> 
+	<div class="swiper-container" id="homeSwiperHonor">
+		<div class="swiper-wrapper" id="layer-photos-demo">
+			<article:list name="vo" category="99" row="99">
+			<div class="swiper-slide">
+				<div class="pic-box">
+					<img class="pic" src="{$vo.cover_id|get_cover='path'}" alt="{$vo.title}" />
+				</div>
+				<span class="title">{$vo.title}</span>
+			</div>
+			</article:list>
+		</div>
+		<div class="swiper-pagination" id="honorPagination"></div>
+	</div>
+</div>
+<include file="Public/footer" />   
+ 
+<script> 
+	$(function(){
+		messPage.initPage();
+		layer.photos({
+		  photos: '#layer-photos-demo'
+		  ,anim: 4 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+		}); 
+	})
+</script>
+</body>
+ 
+</html>

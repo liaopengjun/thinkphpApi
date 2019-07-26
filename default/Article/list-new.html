@@ -1,0 +1,41 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	<img src="__IMG__/new-head-bg.jpg" class="pic">
+</div> 
+<!-- 新闻动态 -->
+<div class="module-pages-wrap">
+	<ul class="new-pages">
+		<article:list name="vo" category="112" row="5">
+		<li class="lis">
+			<a class="clr new-link" href="{:U('Article/detail?id='.$vo['id'])}" target="_blank">
+				<div class="pic-box fl">
+					<img class="transform-center-x" src="{$vo.cover_id|get_cover='path'}" alt="{$vo.title}" />
+				</div>
+				<div class="text-box fr">
+					<div class="title a_hidden">{$vo.title}</div>
+					<div class="author-timer">
+						<?php $info = M('DocumentArticle')->find($vo['id']); ?>
+						<span class="author">作者：{$info.author}</span>
+						<span class="timer">时间：{$vo.create_time|date="Y-m-d",###}</span>
+					</div>
+					<div class="content">{$info.content}</div>
+					<div class="arrow iconfont">&#xe600;</div>
+				</div>
+			</a>
+		</li>
+		</article:list>
+	</ul>
+	<article:page cate="$cid" child="true" listrow="5" />
+</div>
+<include file="Public/footer" />   
+ 
+<script> 
+	$(function(){
+		messPage.initPage();
+		$('body').css('background','#f5f5f5');
+	})
+</script>
+</body>
+ 
+</html>

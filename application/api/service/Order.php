@@ -79,6 +79,7 @@ class Order
      }
     //生成订单快照
      protected function snapOrder($status){
+
         $sanp = [
             'orderPrice' => 0,
             'totalCount' => 0,
@@ -144,7 +145,7 @@ class Order
 
             //订单所有的商品总金额
             $status['orderPrice'] += $Pstatus['totalPrice'];
-            $status['totalCount'] += $Pstatus['count'];
+            $status['totalCount'] += $Pstatus['counts'];
 
             //历史订单
             array_push($status['pStatusArray'],$Pstatus);
@@ -157,11 +158,13 @@ class Order
     private function getProductStatus($oPID,$ocount,$products){
             $pIndex = -1;//商品是否下架
             $pStatus = [
-              'id'=>null,
-               'haveStock'=>false,//库存
-               'count'=>0,
-               'name'=>'',//商品名称
+                'id'=>null,
+                'haveStock'=>false,//库存
+                'counts'=>0,
+                'price'=>0,
+                'name'=>'',//商品名称
                 'totalPrice'=>0,//订单内某一类商品和数量相乘的价格
+                'main_img_url'=>null,
             ];
 
             for ($i=0;$i<count($products);$i++){
@@ -180,8 +183,10 @@ class Order
                 $product = $products[$pIndex];
                 $pStatus['id']=$product['id'];
                 $pStatus['name']=$product['name'];
-                $pStatus['count']=$ocount;
+                $pStatus['counts']=$ocount;
+                $pStatus['price']=$product['price'];
                 $pStatus['totalPrice']=$product['price'] * $ocount;
+                $pStatus['main_img_url']=$product['main_img_url'];
 
                 if($product['stock'] = $ocount >= 0){
                     $pStatus['haveStock']=true;

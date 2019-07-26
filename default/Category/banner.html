@@ -1,0 +1,30 @@
+<div class="homepage-banner swiper-container banner-swiper" id="homepagebanner" style="position: relative;z-index: 0;">
+	<div class="swiper-wrapper">
+		<volist name='focus' id='vo'>
+			<div class="swiper-slide">
+				<a href="{$vo.url}" target="_blank" class="link-img">
+					<img src="{$vo.pic|get_cover='path'}" alt="" class="pic" width="100%"/>
+					<div class="video_play">
+						<i></i>
+					</div>
+				</a>
+			</div>
+		</volist>
+	</div>
+	<!-- 切换，可删 -->
+	<!--<div class="btn swiper-button-prev"></div>
+	<div class="btn swiper-button-next"></div>-->
+	<!-- 分页器，可删 -->
+	<div class="swiper-pagination homepage-banner-pagination"></div>
+</div>
+<script type="text/javascript">
+	var homepagebanner = new Swiper('#homepagebanner', {
+		loop: true,
+//		effect : 'fade',
+		autoplay: 3000,
+		speed:1300,
+		autoplayDisableOnInteraction: false,
+		pagination: '.homepage-banner-pagination',
+		paginationClickable: true,
+	})
+</script>

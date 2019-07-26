@@ -1,6 +1,6 @@
 <?php
 use think\Route;
-
+//路由文件
 //Banner
 Route::get('api/:version/banner/:id','api/:version.Banner/getBanner');
 
@@ -21,12 +21,12 @@ Route::get('api/:version/category/all','api/:version.Category/getAllCategories')
 
 //Token
 Route::post('api/:version/token/user', 'api/:version.Token/getToken');
+//Token
+Route::post('api/:version/token/verify', 'api/:version.Token/verifyToken');
 
 //Address
 Route::post('api/:version/address','api/:version.Address/createOrUpdateAddress');
-Route::get('api/:version/hello','api/:version.Address/hello');
-Route::get('api/:version/hello','api/:version.Address/hello');
-Route::get('api/:version/data','api/:version.Address/data');
+Route::get('api/:version/address','api/:version.Address/getUserAddress');
 
 //Order
 

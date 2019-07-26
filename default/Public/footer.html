@@ -1,0 +1,63 @@
+<!-- 内页通用底部 -->
+<div class="module-footer">
+	<div class="nav-wrap">
+		<div class="module-footer-nav">
+			<a href="/" class="nav-link">网站首页</a>
+			<a href="/" class="nav-link">关于我们</a>
+			<a href="/" class="nav-link">新闻动态</a>
+			<a href="/" class="nav-link">产品中心</a>
+			<a href="/" class="nav-link">工程案例</a>
+			<a href="/" class="nav-link">招商加盟</a>
+			<a href="/" class="nav-link">联系我们</a>
+		</div>
+	</div>
+	<div class="footer-wrap">
+		<div class="module-footer-main clr">
+			<div class="company-information fl clr">
+				<div class="company-share fl">
+					<span class="company-name">{:C('COMPANY_NAME')}</span>
+					<span class="company-eg">Jiangxi Dongfei Industrial Co., Ltd.</span>
+					<div class="share-wrap bdsharebuttonbox">
+						<span class="share-name">分享到：</span>
+						<a class="iconfont shares-icon" data-cmd="weixin" href="">&#xe608;</a>
+						<a class="iconfont shares-icon" data-cmd="sqq" href="">&#xe665;</a>
+						<a class="iconfont shares-icon" data-cmd="tsina" href="">&#xe63d;</a>
+					</div>
+				</div> 
+				<ul class="contact fl">
+					<li class="lis a_hidden">
+						地址：<a style="display: inline;color: #999;font-size: 12px;" title="	{:C('COMPANY_ADDRESS')}">	{:C('COMPANY_ADDRESS')}</a>
+					</li> 
+					<li class="lis a_hidden">电话：{:C('COMPANY_PHONE')}</li>
+				</ul>
+				<ul class="contact fl">
+					<li class="lis a_hidden">邮编：{:C('youbian')}</li>
+					<li class="lis a_hidden">手机：{:C('CONTACT_PHONE')}</li>
+					<li class="lis a_hidden">邮箱：{:C('COMPANY_EMAIL')}</li>
+				</ul> 
+			</div> 
+			<div class="qr-code fr clr">
+				<div class="codes fl">
+					<div class="pic-box">
+						<?php $wei=C('COMPANY_IMGCODE');?>
+						<img class="pic-x" src="{$wei|get_cover='path'}" alt="{:C('COMPANY_NAME')}" />
+					</div>
+					<span class="name">微信二维码</span>
+				</div>
+				<div class="codes fr">
+					<div class="pic-box">
+						<?php $wei=C('ERWEIMA2');?>
+						<img class="pic-x" src="{$wei|get_cover='path'}" alt="{:C('COMPANY_NAME')}" />
+					</div>
+					<span class="name">网站二维码</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{:C('SEO_CNZZ')}
+<script>
+	$(function(){
+		shareScript.initPage();
+	})
+</script> 

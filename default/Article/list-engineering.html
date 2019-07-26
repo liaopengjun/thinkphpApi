@@ -1,0 +1,40 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	<img src="__IMG__/engineering-head-bg.jpg" class="pic">
+</div> 
+<!-- 工程案例 -->
+<div class="module-pages-wrap">
+	<ul class="album-list clr" id="layerPhotos">
+		<article:list name="vo" category="$cid" row="9">
+		<li class="lis">
+			<div class="img_box">
+				<img class="transform-center-x" src="{$vo.cover_id|get_cover='path'}" />
+			</div>
+			<div class="title">{$vo.title}</div>
+			<div class="pic-box">
+				<?php
+					$info_add=M('document_album')->where(array('id'=>$vo['id']))->find();
+					 $pic = array_filter(explode(',',$info_add['duotu']));
+					 $ids = array_filter(explode('&',$info_add['pictrue_name']));
+				?>
+				<volist name="pic" id="va">
+					<img layer-src="{$va|get_cover='path'}">
+				</volist>
+			</div>
+		</li>
+		</article:list>
+	</ul>
+	<article:page cate="$cid" child="true" listrow="9" />
+</div>
+<include file="Public/footer" />   
+ 
+<script> 
+	$(function(){
+		messPage.initPage();
+		$('body').css('background','#f5f5f5');
+	})
+</script>
+</body>
+ 
+</html>

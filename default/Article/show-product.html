@@ -1,0 +1,53 @@
+<include file="Public/header" />
+<!-- 产品内页头部 -->
+<div class="product-show-head">
+	<div class="wrap clr">
+		<div class="title fl">产品分类</div>
+		<ul class="classify-wrap clr fr">
+			<li class="lis  <if condition="I('category')==100">product-select</if>">
+				<a class="product-link" href="{:U('Article/lists?category=96')}">全部产品</a>
+			</li>
+			<think:cate pid="100">
+			<li class="lis <if condition="I('category')==$cate['id']">product-select</if>">
+				<a class="product-link" href="{:U('Article/lists?category='.$cate['id'])}">{$cate[title]}</a>
+			</li>
+			</think:cate>
+		</ul>
+	</div>
+</div>
+<!-- 产品内页 -->
+<div class="show-product">
+	<div class="title">{$info.title}</div>
+	<div class="banner-warp">
+		<div class="swiper-container show-product-banner" id="showProductBanner">
+			<div class="swiper-wrapper">
+				<?php 
+					$pic = array_filter(explode(',',$info['duotu']));
+					$ids = array_filter(explode('&',$info['pictrue_name']));
+				?>
+				<volist name="pic" id="va">
+				<div class="swiper-slide">
+					<img class="transform-center-x" src="{$va|get_cover='path'}">
+				</div>
+				</volist>
+			</div>
+			<div class="swiper-pagination" id="productPagination"></div>
+		</div>
+		<div class="swiper-prev iconfont swiper-btn" id="productPrev">&#xe62f;</div>
+		<div class="swiper-next iconfont swiper-btn" id="productNext">&#xe62e;</div>
+	</div>
+	<div class="detalis">
+		<div class="tit">产品详情</div>
+		<div class="content module_editor">{$info.content}</div>
+	</div>
+</div>
+<include file="Public/footer" />
+
+<script>
+	$(function() { 
+		messPage.initPage(); 
+	})
+</script>
+</body>
+
+</html>

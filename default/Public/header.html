@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><if condition="$title">{$title}-</if>{:C('COMPANY_NAME')}</title>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="applicable-device" content="pc">
+<?php $site_url='http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; ?>
+<meta property="og:url" content="{$site_url}"/>
+<?php $logo_img = C('CONPANY_LOGO');?>
+<meta property="og:image" content="{$logo_img|get_cover='path'}"/>
+<meta content="{$keywords}" name="keywords" />
+<meta content="{$description}" name="description" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="bookmark" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="__WEBMONKEY__/js/layer/layer/skin/layer.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/dist/dongfeidianlan.pc.min.css">
+<link rel="stylesheet" href="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.min.css">	
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/layer/layer/layer.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/vaildform/validform5.3.2.js"></script>
+<script type="text/javascript" src="__WEBMONKEY__/js/jquery/swiper/3.2.7/swiper.jquery.min.js"></script>
+<script src="__JS__/index.js"></script>
+</head> 
+<body>
+	<div class="public_top_info">
+		<div class="left_box">您好,欢迎来到{:C('COMPANY_NAME')}官网！</div>
+		<div class="right_box">选择语言(Choose a language):&nbsp;&nbsp;&nbsp;
+		<a class="zh" href="/index/set_lang/type/1" style="background: #da1b1b;border-color: #da1b1b;color: #fff;">中文版</a>
+		<a class="en" href="/index/set_lang/type/2">English</a>
+		</div> 
+	</div> 
+	<div class="public_top_navlist">
+		<a class="<if condition="I('category')==95">on</if>" href="{:U('Article/lists?category=95')}">关于我们</a>
+		<a class="<if condition="I('category')==112">on</if>" href="{:U('Article/lists?category=112')}">新闻动态</a>
+		<a class="<if condition="I('category')==100">on</if>" href="{:U('Article/lists?category=100')}">产品中心</a>
+		<div class="logo-box">
+			<a href="/" class="logo">
+				<img class="pic" src="__IMG__/logo.jpg"/>
+			</a>
+		</div>
+		<a class="<if condition="I('category')==113">on</if>" href="{:U('Article/lists?category=113')}">工程案例</a>
+		<a class="<if condition="I('category')==114">on</if>" href="{:U('Article/lists?category=114')}">招商加盟</a>
+		<a class="<if condition="I('category')==118">on</if>" href="{:U('Article/lists?category=118')}">联系我们</a>
+		<div class="seach iconfont">&#xe60d;</div>
+	</div>
+ 

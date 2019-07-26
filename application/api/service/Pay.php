@@ -87,6 +87,7 @@ class Pay
     }
 
     private function recordPreOrder($wxOrder){
+        dump($wxOrder);die;
         // 必须是update，每次用户取消支付后再次对同一订单支付，prepay_id是不同的
         OrderModel::where('id', '=', $this->orderID)
             ->update(['prepay_id' => $wxOrder['prepay_id']]);

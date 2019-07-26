@@ -1,0 +1,37 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	<img src="__IMG__/new-head-bg.jpg" class="pic">
+</div> 
+<!-- 新闻动态 -->
+<div class="show-new">
+	<h1 class="title">{$info.title}</h1>
+	<div class="box">
+		<span class="author">作者：{$info.author}</span>
+		<span class="timer">时间：{$info.create_time|date="Y-m-d",###}</span>
+	</div>
+	<div class="content module_editor">{$info.content}</div>
+	<div class="module-articpages clr">
+		<article:prev name="prev" info="info">
+			<div class="a_hidden prev fl">
+				<a href="{:U('?id='.$prev['id'])}" class="link">上一个：{$prev['title']}</a>
+			</div>
+		</article:prev>
+		<article:next name="next" info="info">
+			<div class="a_hidden next fr">
+				<a href="{:U('?id='.$next['id'])}" class="link">下一个：{$next['title']}</a>
+			</div>
+		</article:next>
+	</div>
+</div>
+<include file="Public/footer" />   
+ 
+<script> 
+	$(function(){
+		messPage.initPage();
+		$('body').css('background','#f5f5f5');
+	})
+</script>
+</body>
+ 
+</html>

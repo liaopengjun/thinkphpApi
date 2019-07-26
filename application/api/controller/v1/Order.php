@@ -37,7 +37,7 @@ class Order extends BaseController
     }
 
     //订单信息
-    public function getSummaryByOrder($page,$size=15){
+    public function getSummaryByOrder($page,$size=2){
         (new PagingParameter())->goCheck();
         $uid = TokenService::getCurrentUid();
         $PageOrder = OrderModel::getSummaryByUser($uid,$page,$size);
@@ -64,7 +64,17 @@ class Order extends BaseController
         if(!$OrderDetail){
             throw new OrderException();
         }
-        return json($OrderDetail->hidden(['prepay_id']));
+        $arr = $OrderDetail->toArray();
+        foreach ($arr as $key => $value) {
+           if($key=='snap_items'){
+               $arr[$key]=json_decode($value,true);
+           }
+           if($key == 'snap_address'){
+               $arr[$key]=json_decode($value,true);
+           }
+
+        }
+        return json($arr);
     }
 
 

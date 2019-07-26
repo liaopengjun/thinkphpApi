@@ -1,0 +1,10 @@
+<include file="Public/header" />
+
+<include file="Public/footer" />   
+
+<script>
+
+</script>
+</body>
+ 
+</html>

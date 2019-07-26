@@ -30,6 +30,17 @@ class Token
         return md5($randStr.$timestamp.$salt);
     }
 
+    //判断token是否存在
+    public static function verifyToken($token)
+    {
+        $exist = Cache::get($token);
+        if($exist){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     //构建获取具体用户字段值方法
     public static function getCurrentTokenVar($key){
         $token = Request::instance()->header('token');

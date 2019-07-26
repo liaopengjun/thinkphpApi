@@ -8,6 +8,7 @@ use app\api\validate\AddressNew;
 use app\api\service\Token as TokenService;
 use app\lib\exception\SuccessMessage;
 use app\lib\exception\UserException;
+use app\api\model\UserAddress;
 
 class Address extends BaseController
 {
@@ -16,6 +17,21 @@ class Address extends BaseController
     protected $beforeActionList = [
         "checkPrimaryScope" =>  ["only" => "createorupdateaddress"],
     ];
+
+    //获取收货地址
+    public static function getUserAddress(){
+        $uid = TokenService::getCurrentUid();
+        $userAddress = UserAddress::where('user_id', $uid)
+            ->find();
+        if(!$userAddress){
+            throw new UserException([
+                'msg' => '用户地址不存在',
+                'errorCode' => 60001
+            ]);
+        }
+//        $userAddress['snap_items']=json_decode($userAddress['snap_items'],true);
+        return json($userAddress);
+    }
 
     public function createOrUpdateAddress(){
         $data = input('post.');

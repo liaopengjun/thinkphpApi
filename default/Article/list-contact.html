@@ -1,0 +1,63 @@
+<include file="Public/header" />
+<!-- 头部公用 -->
+<div class="module-pages-img">
+	{:hook('Map')}
+</div> 
+<!-- 联系我们 -->
+<div class="module-pages-wrap clr">
+	<div class="company-details fl">
+		<h2 class="company-name">{:C('COMPANY_NAME')}</h2>
+		<div class="company-eg">Jiangxi Dongfei Industrial Co., Ltd.</div>
+		<ul class="company-list clr">
+			<li class="lis a_hidden">地址：{:C('COMPANY_ADDRESS')}</li>
+			<li class="lis">邮编：{:C('youbian')}</li>
+			<li class="lis">座机：{:C('COMPANY_PHONE')}</li>
+		</ul>
+		<div class="code clr">
+			<div class="wechat box fl clr">
+				<div class="img_box fl">
+					<?php $wei=C('COMPANY_IMGCODE');?>
+					<img class="pic-x" src="{$wei|get_cover='path'}" alt="{:C('COMPANY_NAME')}" />
+				</div>
+				<span class="fl">公众号二维码</span>
+			</div>
+			<div class="web box clr fr">
+				<div class="img_box fl">
+					<?php $wei=C('ERWEIMA2');?> 
+					<img class="pic-x" src="{$wei|get_cover='path'}" alt="{:C('COMPANY_NAME')}" />
+				</div>
+				<span class="fl">网站二维码</span>
+			</div>
+		</div>
+	</div>
+	<div class="leaving-message fr">
+		<h2 class="title">留言板</h2>
+		<form id="myForm" action="/addons/execute/_addons/common/_controller/common/_action/index.html" method="post">
+			<div class="inpt-wrap clr">
+				<div class="ipt-box fl">
+					<input type="text" name="username" id="name" value="" placeholder="姓名" />
+				</div>
+				<div class="ipt-box fl">
+					<input type="text" name="phone" id="phone" value="" placeholder="电话" />
+				</div>
+				<div class="ipt-box fr">
+					<input type="text" name="mailbox" id="mailbox" value="" placeholder="邮箱" />
+				</div>
+			</div>
+			<div class="message-box">
+				<textarea name="content" id="content" rows="" cols="" placeholder="留言"></textarea>
+			</div>
+			<input type="button" class="submit fr" id="submitBtn"  value="提交" />
+		</form>
+	</div>
+</div>
+<include file="Public/footer" />   
+ 
+<script> 	
+	$(function(){
+		messPage.initPage();
+	})
+</script>
+</body>
+ 
+</html>
