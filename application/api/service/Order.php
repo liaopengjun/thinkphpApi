@@ -77,6 +77,7 @@ class Order
         }
 
      }
+
     //生成订单快照
      protected function snapOrder($status){
 

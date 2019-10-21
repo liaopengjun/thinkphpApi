@@ -13,8 +13,7 @@ class Banner extends Model
     protected $hidden = ['delete_time','update_time'];
 
     /** BannerItem 关联模型
-     *  Banner 当前模型
-     *  banner_id 外键
+     *  banner_id BannerItem 外键
      *  id 当前模型主键
      */
 

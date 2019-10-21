@@ -10,13 +10,13 @@ namespace app\api\validate;
 use app\lib\exception\ParameterException;
 use think\Validate;
 use think\Request;
-
 class BaseValidate extends Validate
 {
-    public function  goCheck(){
-
+    public function goCheck(){
         $params = Request::instance()->param();
+
         $result = $this->batch()->check($params);
+
         if(!$result){
             //参数异常抛出
               $e = new ParameterException([

@@ -17,9 +17,8 @@ class BannerItem extends Model
 
     /**
      * Image 关联模型
-     *  BannerItem 当前模型
-     *  img_id 外键
-     *  id 当前模型主键
+     *  img_id 当前外键
+     *  id 关联模型主键
      */
     public function img(){
         return $this->belongsTo('Image','img_id','id');

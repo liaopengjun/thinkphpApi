@@ -11,7 +11,7 @@ namespace app\lib\exception;
 
 class WeChatException extends  BaseException
 {
-    protected  $code =  404;
-    protected  $msg = '';
-    protected  $errorCode = '999';
+    public  $code =404;
+    public  $msg = '';
+    public  $errorCode = '999';
 }

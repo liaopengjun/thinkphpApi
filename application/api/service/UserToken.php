@@ -1,14 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: liaopengjun
- * Date: 2019-07-05
- * Time: 10:02
- */
-
 namespace app\api\service;
-
-
 use app\lib\enum\ScopeEnum;
 use app\lib\exception\TokenException;
 use app\lib\exception\WeChatException;
@@ -76,7 +67,7 @@ class UserToken extends Token
     }
 
     //设置缓存
-        private function saveToCached($cachedVakue){
+    private function saveToCached($cachedVakue){
             //加密令牌
             $key = self::generateToken();
             $value = json_encode($cachedVakue);

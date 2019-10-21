@@ -19,6 +19,7 @@ class ExceptionHander extends  Handle
     private $code;
     private $msg;
     private $errorCode;
+
     public function render(Exception $e)
     {
 
@@ -43,6 +44,7 @@ class ExceptionHander extends  Handle
 
 
         }
+
         $request = Request::instance();
         $result = [
             'msg' => $this->msg,
